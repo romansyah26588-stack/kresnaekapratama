@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Kresna Eka Pratama - Solusi Konstruksi & Perdagangan</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0A1931', // Dark Navy
+                        'primary-accent': '#185ADB', // Bright Blue
+                        'secondary-light': '#E9EAEF', // Off-White
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for professional feel */
+        .shadow-custom {
+            box-shadow: 0 10px 30px rgba(24, 90, 219, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-secondary-light text-primary-dark">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-extrabold text-primary-dark tracking-tight">
+                    KRESNA EKA PRATAMA
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-primary-dark hover:text-primary-accent transition duration-300 font-medium">Beranda</a>
+                    <a href="#layanan" class="text-primary-dark hover:text-primary-accent transition duration-300 font-medium">Layanan</a>
+                    <a href="#keunggulan" class="text-primary-dark hover:text-primary-accent transition duration-300 font-medium">Keunggulan</a>
+                    <!-- NAVIGATION UPDATED HERE -->
+                    <a href="#katalog" class="text-primary-dark hover:text-primary-accent transition duration-300 font-medium">Katalog Produk</a>
+                    <a href="#kontak" class="py-2 px-4 bg-primary-accent text-white rounded-lg hover:bg-primary-dark transition duration-300">Hubungi Kami</a>
+                </nav>
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-primary-dark focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#home" class="block py-3 px-4 text-primary-dark hover:bg-secondary-light">Beranda</a>
+            <a href="#layanan" class="block py-3 px-4 text-primary-dark hover:bg-secondary-light">Layanan</a>
+            <a href="#keunggulan" class="block py-3 px-4 text-primary-dark hover:bg-secondary-light">Keunggulan</a>
+             <!-- NAVIGATION UPDATED HERE -->
+            <a href="#katalog" class="block py-3 px-4 text-primary-dark hover:bg-secondary-light">Katalog Produk</a>
+            <a href="#kontak" class="block py-3 px-4 bg-primary-accent text-white text-center hover:bg-primary-dark">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-primary-dark text-white pt-24 pb-32">
+        <!-- Background Overlay for visual depth -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://placehold.co/1200x800/0A1931/ffffff?text=Professional+Background'); background-size: cover; background-position: center;"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 leading-tight">
+                Solusi <span class="text-primary-accent">Konstruksi & Perdagangan</span> Tepercaya
+            </h1>
+            <p class="text-xl sm:text-2xl font-light max-w-3xl mx-auto mb-8 opacity-90">
+                Kami menghadirkan proyek berkualitas tinggi dan layanan perdagangan umum dengan **Integritas**, **Inovasi**, dan **Kualitas** terbaik.
+            </p>
+            <div class="space-x-4">
+                <a href="#kontak" class="inline-block py-3 px-8 text-lg font-semibold bg-primary-accent text-white rounded-xl hover:bg-primary-dark border-2 border-primary-accent transition duration-300 shadow-lg transform hover:scale-105">
+                    Mulai Proyek Anda
+                </a>
+                <a href="#layanan" class="inline-block py-3 px-8 text-lg font-semibold text-white rounded-xl border-2 border-white hover:bg-white hover:text-primary-dark transition duration-300 transform hover:scale-105 mt-4 sm:mt-0">
+                    Pelajari Lebih Lanjut
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center mb-4 text-primary-dark">Layanan Utama Kami</h2>
+            <p class="text-center text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+                Kami menyediakan spektrum layanan yang luas untuk memenuhi kebutuhan bisnis dan infrastruktur Anda.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Civil Construction -->
+                <div class="bg-secondary-light p-8 rounded-2xl shadow-custom hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-primary-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 8v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    <h3 class="text-2xl font-bold mb-3 text-primary-dark">Konstruksi Sipil</h3>
+                    <p class="text-gray-600">
+                        Pembangunan infrastruktur berkualitas tinggi, mulai dari gedung komersial hingga fasilitas publik. Fokus pada ketahanan dan efisiensi.
+                    </p>
+                </div>
+
+                <!-- Service Card 2: General Trading -->
+                <div class="bg-secondary-light p-8 rounded-2xl shadow-custom hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-primary-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <h3 class="text-2xl font-bold mb-3 text-primary-dark">Perdagangan Umum</h3>
+                    <p class="text-gray-600">
+                        Distribusi dan suplai material industri, alat berat, dan komoditas dengan jaringan logistik yang luas dan andal.
+                    </p>
+                </div>
+
+                <!-- Service Card 3: Project Management -->
+                <div class="bg-secondary-light p-8 rounded-2xl shadow-custom hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <svg class="w-10 h-10 text-primary-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m-5 6h8m-1 4h2m-2-4h2m-3-4h4m-4 4V7m0 10h4m-4-4V7m0 10h4"></path></svg>
+                    <h3 class="text-2xl font-bold mb-3 text-primary-dark">Manajemen Proyek</h3>
+                    <p class="text-gray-600">
+                        Pengawasan dan pengelolaan proyek dari awal hingga akhir, memastikan waktu, anggaran, dan kualitas terpenuhi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Product Catalog Section -->
+    <section id="katalog" class="py-20 bg-secondary-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center mb-4 text-primary-dark">Katalog Produk Unggulan</h2>
+            <p class="text-center text-xl text-gray-600 max-w-3xl mx-auto mb-16">
+                Sebagai spesialis, kami menawarkan Batching Plant dan peralatan penunjang konstruksi dengan teknologi dan durabilitas tinggi.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Product Card 1: Permanent Batching Plant -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-primary-accent hover:shadow-xl group">
+                    <img src="https://placehold.co/600x400/0A1931/E9EAEF?text=Permanent+Batching+Plant" alt="Permanent Batching Plant Dry Mix System" class="w-full h-48 object-cover group-hover:scale-[1.02] transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-primary-accent">Permanent Batching Plant</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Solusi pencampuran beton stasioner dengan kapasitas besar dan efisiensi produksi maksimal untuk proyek jangka panjang. Tersedia sistem Dry Mix dan Wet Mix.
+                        </p>
+                        <a href="#kontak" class="inline-block text-primary-dark font-semibold border-b-2 border-primary-accent hover:text-primary-accent transition duration-300">
+                            Lihat Detail & Harga &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Mobile Batching Plant -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-primary-accent hover:shadow-xl group">
+                    <img src="https://placehold.co/600x400/185ADB/E9EAEF?text=Mobile+Batching+Plant" alt="Mobile Batching Plant Dry Mix System" class="w-full h-48 object-cover group-hover:scale-[1.02] transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-primary-accent">Mobile Batching Plant</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Unit yang dirancang untuk mobilitas tinggi dan pemasangan cepat. Ideal untuk proyek yang berpindah-pindah lokasi (On A Truck System).
+                        </p>
+                        <a href="#kontak" class="inline-block text-primary-dark font-semibold border-b-2 border-primary-accent hover:text-primary-accent transition duration-300">
+                            Lihat Detail & Harga &rarr;
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3: Mini Batching Plant -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-primary-accent hover:shadow-xl group">
+                    <img src="https://placehold.co/600x400/0A1931/E9EAEF?text=Mini+Batching+Plant" alt="Mini Batching Plant" class="w-full h-48 object-cover group-hover:scale-[1.02] transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-primary-accent">Mini Batching Plant</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Pilihan ekonomis dengan tapak kecil. Sempurna untuk proyek skala menengah atau area dengan keterbatasan lahan yang ketat.
+                        </p>
+                        <a href="#kontak" class="inline-block text-primary-dark font-semibold border-b-2 border-primary-accent hover:text-primary-accent transition duration-300">
+                            Lihat Detail & Harga &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                 <!-- Product Card 4: Jembatan Timbang -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-primary-accent hover:shadow-xl group">
+                    <img src="https://placehold.co/600x400/185ADB/E9EAEF?text=Jembatan+Timbang" alt="Jembatan Timbang / Weighbridge" class="w-full h-48 object-cover group-hover:scale-[1.02] transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-primary-accent">Jembatan Timbang</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Solusi akurat untuk pengukuran berat kendaraan niaga dan muatan material di lokasi konstruksi atau gudang logistik.
+                        </p>
+                        <a href="#kontak" class="inline-block text-primary-dark font-semibold border-b-2 border-primary-accent hover:text-primary-accent transition duration-300">
+                            Lihat Detail & Harga &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                 <!-- Product Card 5: Batching Plong -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-2xl transition duration-300 hover:shadow-primary-accent hover:shadow-xl group">
+                    <img src="https://placehold.co/600x400/0A1931/E9EAEF?text=Batching+Plong" alt="Batching Plong" class="w-full h-48 object-cover group-hover:scale-[1.02] transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-primary-accent">Batching Plong</h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Komponen penting dalam sistem Batching Plant untuk pengolahan material curah yang efisien dan terukur.
+                        </p>
+                        <a href="#kontak" class="inline-block text-primary-dark font-semibold border-b-2 border-primary-accent hover:text-primary-accent transition duration-300">
+                            Lihat Detail & Harga &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 6: Konsultasi Kustom -->
+                <div class="bg-primary-accent rounded-xl p-6 shadow-2xl flex items-center justify-center text-center transition duration-300 hover:opacity-90">
+                    <div>
+                        <svg class="w-12 h-12 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586L4 12.414V8a2 2 0 012-2h11zm-5-3a2 2 0 100 4a2 2 0 000-4z"></path></svg>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Butuh Solusi Kustom?</h3>
+                        <p class="text-secondary-light mb-4 text-sm">
+                            Hubungi tim kami untuk konsultasi dan penawaran sesuai spesifikasi proyek Anda.
+                        </p>
+                        <a href="#kontak" class="inline-block py-2 px-4 text-sm font-bold bg-white text-primary-accent rounded-full hover:bg-secondary-light transition duration-300">
+                            Konsultasi Sekarang
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="keunggulan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div>
+                    <span class="text-primary-accent text-lg font-semibold mb-2 block">Mengapa Memilih Kami?</span>
+                    <h2 class="text-4xl font-extrabold text-primary-dark mb-6">
+                        Integritas, Kualitas, dan Pengalaman Lebih dari 10 Tahun
+                    </h2>
+                    <p class="text-gray-700 text-lg mb-8">
+                        PT Kresna Eka Pratama bukan hanya penyedia jasa, tetapi mitra strategis Anda. Kami berpegang teguh pada komitmen untuk memberikan hasil yang melampaui ekspektasi.
+                    </p>
+                    
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002.924 9.172c-.114.654-.114 1.32-.001 1.974h20.154c.113-.654.113-1.32-.001-1.974a12.001 12.001 0 00-.518-2.152"></path></svg>
+                            <p class="font-medium text-primary-dark">Komitmen Kualitas Tinggi</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0a9 9 0 0118 0z"></path></svg>
+                            <p class="font-medium text-primary-dark">Pengiriman Tepat Waktu</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0a3 3 0 016 0zm6 3a2 2 0 11-4 0a2 2 0 014 0zM7 10a2 2 0 11-4 0a2 2 0 014 0z"></path></svg>
+                            <p class="font-medium text-primary-dark">Tim Profesional</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-primary-accent flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6"></path></svg>
+                            <p class="font-medium text-primary-dark">Harga Kompetitif</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Placeholder -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://placehold.co/600x400/185ADB/ffffff?text=Tim+Profesional" alt="Tim PT Kresna Eka Pratama" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section (Before Footer) -->
+    <section id="kontak" class="py-20 bg-primary-accent">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+                Siap Mewujudkan Proyek Anda?
+            </h2>
+            <p class="text-xl font-light mb-8 opacity-90">
+                Jangan ragu untuk berdiskusi dengan tim ahli kami. Kami siap memberikan konsultasi gratis dan penawaran terbaik.
+            </p>
+            <a href="mailto:info@kresnaekapratama.com" class="inline-block py-3 px-10 text-xl font-bold bg-white text-primary-accent rounded-full hover:bg-secondary-light transition duration-300 shadow-xl transform hover:scale-105">
+                Kirim Email Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-primary-accent">KRESNA EKA PRATAMA</h4>
+                    <p class="text-gray-400 text-sm">
+                        Berkomitmen menjadi mitra tepercaya dalam konstruksi dan perdagangan umum, membangun masa depan yang kokoh.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 border-b-2 border-primary-accent pb-1 inline-block">Menu Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#layanan" class="hover:text-primary-accent transition duration-200">Layanan Kami</a></li>
+                        <!-- LINK UPDATED HERE -->
+                        <li><a href="#katalog" class="hover:text-primary-accent transition duration-200">Katalog Produk</a></li>
+                        <li><a href="#" class="hover:text-primary-accent transition duration-200">Karir</a></li>
+                        <li><a href="#keunggulan" class="hover:text-primary-accent transition duration-200">Tentang Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 border-b-2 border-primary-accent pb-1 inline-block">Hubungi Kami</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span>info@kresnaekapratama.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+                            <span>(021) 1234 5678</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg class="w-4 h-4 text-primary-accent mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Jl. Jend. Sudirman Kav. 1, Jakarta Pusat 10220</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Placeholder -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 border-b-2 border-primary-accent pb-1 inline-block">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <!-- Simplified SVG for social icons -->
+                        <a href="#" class="text-gray-400 hover:text-primary-accent transition duration-300">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.633 7.997c-.411.181-.843.303-1.288.35a3.896 3.896 0 00-.783-.974c-.584-.585-1.393-.94-2.261-.94h-.002a4.838 4.838 0 00-3.328 1.408c-.287.291-.532.618-.744.975a5.158 5.158 0 00-.776-1.554c-.694-1.298-1.921-2.185-3.327-2.185H3.5a1 1 0 00-1 1v12a1 1 0 001 1h.5v-7.23a3.5 3.5 0 013.5-3.5h.5c.34 0 .668.053.978.157v3.078c-.297.056-.596.16-1.02.433-.358.232-.58.552-.58.918 0 .506.398.924.908.995v.001l-.001.001c.217.031.439.047.662.047.234 0 .463-.018.688-.052v2.857a1 1 0 001 1h3.5a1 1 0 001-1v-2.857a.936.936 0 00.125-.015c.307.009.615.015.923.015h.5a3.5 3.5 0 013.5 3.5V19h.5a1 1 0 001-1V6.997a1 1 0 00-.367-.798z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-accent transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.25 12.037c0 5.617-4.568 10.185-10.185 10.185S1.88 17.654 1.88 12.037 6.448 1.852 12.065 1.852s10.185 4.568 10.185 10.185zm-5.83-2.603h-.67c-.2 0-.37.166-.37.37v.88c0 .2.166.37.37.37h.67c.2 0 .37-.166.37-.37v-.88c0-.2-.166-.37-.37-.37zm-2.19 2.603c0 .633-.512 1.145-1.145 1.145H9.98c-.633 0-1.145-.512-1.145-1.145V9.45c0-.633.512-1.145 1.145-1.145h3.11c.633 0 1.145.512 1.145 1.145v2.587zm4.385-2.603h-.67c-.2 0-.37.166-.37.37v.88c0 .2.166.37.37.37h.67c.2 0 .37-.166.37-.37v-.88c0-.2-.166-.37-.37-.37z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-accent transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 7.184c.143 1.353-.298 2.625-1.096 3.633-.798 1.008-1.928 1.642-3.134 1.815v.91c0 .2-.166.37-.37.37H9.728a1.503 1.503 0 01-1.425-1.11L7.56 12.8h-.001a1.5 1.5 0 01-.132-.37c-.143-1.353.298-2.625 1.096-3.633.798-1.008 1.928-1.642 3.134-1.815V6.077c0-.2.166-.37.37-.37h3.11c.2 0 .37.166.37.37v3.082h.667a.37.37 0 01.37.37v.88c0 .2-.166.37-.37.37h-.667v.51c0 .41-.334.743-.743.743h-.4c-.41 0-.743-.333-.743-.743V9.59c0-.2-.166-.37-.37-.37h-1.04v.993c0 .204-.166.37-.37.37H9.728a.37.37 0 01-.37-.37V8.586c0-.204.166-.37.37-.37h.45c.41 0 .743.333.743.743v.15a1.5 1.5 0 01-.132-.37c-.143-1.353.298-2.625 1.096-3.633.798-1.008 1.928-1.642 3.134-1.815v-.91c0-.2.166-.37.37-.37h3.11c.2 0 .37.166.37.37v.91c1.206.173 2.336.807 3.134 1.815.798 1.008 1.239 2.28 1.096 3.633z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2024 PT Kresna Eka Pratama. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
