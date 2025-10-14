@@ -1,80 +1,67 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id">   
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Memuat Tailwind CSS untuk styling cepat dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Font Awesome untuk ikon WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ9J6Ik5i58j3Ym2xEzM6Z+d0wX7sJ/d+Xz/D8g5B/T5uF1nLzC1iGzGZ5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-/* Menggunakan font Inter secara default */
-        body {
-            font-family: 'Inter', sans-serif;
-            min-height: 200vh; /* Memberi tinggi agar bisa di-scroll */
-            background-color: #f7f7f7;
+        /* Menggunakan CSS kustom untuk memastikan ikon melayang tetap di tempatnya */
+        .whatsapp-float {
+            /* Position fixed memastikan ikon tetap terlihat saat di-scroll */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000; /* Pastikan ikon berada di atas semua elemen lain */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            animation: pulse 2s infinite; /* Animasi berkedip lembut */
         }
 
-        /* Gaya tambahan untuk tombol ikon */
-        .icon-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3.5rem; /* 56px */
-            height: 3.5rem; /* 56px */
-            border-radius: 9999px; /* Bulat sempurna */
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-        }
-
-        .icon-button:hover {
+        .whatsapp-float:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-</style>
-    
-<head>
-    
-    <!-- Kontainer Ikon Terapung (Fixed Position) -->
-    <!-- 'fixed' menjaga elemen tetap di layar. 'bottom-6' & 'right-6' menempatkannya 1.5rem dari bawah dan kanan. -->
-    <div id="floating-icons" class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
-        
-        <!-- Ikon Pump.fun (Menggunakan SVG Kustom Akurat) -->
-        <a 
-            href="https://pump.fun/coin/HgGQwUzJEJzjMknicRKAHggM6jK6NDoKUWs3VMAGhzd6" 
-            target="_blank" 
-            aria-label="Kunjungi Pump.fun" 
-            class="icon-button bg-gray-900 hover:shadow-xl hover:bg-gray-50"
-        >
-            <!-- SVG Kustom Logo Pil Pump.fun (Rotasi -25 derajat, dengan outline) -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6">
-                <g transform="rotate(-25 12 12)">
-                    <!-- Green Half (Kiri - Menggunakan stroke untuk outline) -->
-                    <path d="M12 8H7C5.34315 8 4 9.34315 4 11V13C4 14.6569 5.34315 16 7 16H12V8Z" 
-                          fill="#58d68d" stroke="#1f2937" stroke-width="1.5"/>
-                    <!-- White Half (Kanan - Menggunakan stroke untuk outline) -->
-                    <path d="M12 8H17C18.6569 8 20 9.34315 20 11V13C20 14.6569 18.6569 16 17 16H12V8Z" 
-                          fill="white" stroke="#1f2937" stroke-width="1.5"/>
-                </g>
-            </svg>
-        </a>
 
-        <!-- Ikon X.com (Twitter Baru) -->
-        <a 
-            href="https://x.com/social_plastic" 
-            target="_blank" 
-            aria-label="Kunjungi X.com" 
-            class="icon-button bg-gray-900 text-white hover:bg-black"
-        >
-            <!-- Ikon X (Twitter) -->
-            <i class="fa-brands fa-x-twitter text-xl" title="X.com"></i>
-        </a>
+        /* Definisi animasi pulse */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
 
-        <!-- Ikon Donasi -->
-        <a 
-            href="https://dial.to/?action=solana-action:https://action.solscan.io/api/donate?receiver=EytF9vuDXuSNUosuYkXDfrMfxFhE85Tw6MKMB9poW7mY" 
-            target="_blank" 
-            aria-label="Donate" 
-            class="icon-button bg-gray-900 text-green hover:bg-black"
-        >
-            <!-- Ikon Donasi -->
-            <i class="text-3xl font-extrabold text-emerald-300" title="Donate">$</i>
-        </a>
-        
+        /* Aturan responsif untuk perangkat seluler */
+        @media (max-width: 640px) {
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Konten Dummy untuk menunjukkan scrollability -->
+    <div class="max-w-4xl mx-auto p-6 lg:p-12 min-h-screen">
     </div>
+    <a 
+        href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda." 
+        target="_blank" 
+        class="whatsapp-float flex items-center justify-center 
+               w-16 h-16 rounded-full bg-[#25d366] text-white shadow-xl"
+        aria-label="Hubungi kami via WhatsApp">
+        
+        <!-- Ikon WhatsApp dari Font Awesome -->
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+    <!-- END: IKON WHATSAPP MELAYANG -->
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
